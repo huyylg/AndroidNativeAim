@@ -28,4 +28,10 @@ private:
     bool vulkan_ = false;
     std::vector<Detection> results_;
     // Thread-safe queue for frames
+    // Thêm vào class Detector (private section):
+    bool running_ = false;
+    std::vector<Detection> nms(const std::vector<Detection>& dets, float iou_threshold);
+    float compute_iou(const cv::Rect& a, const cv::Rect& b);
+
+    // Public: void stop();  // Để dừng thread
 };
