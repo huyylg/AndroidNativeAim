@@ -38,6 +38,11 @@ make -j4
 make install
 mkdir -p $HOME/ncnn/build-android-vulkan/install/lib/cmake/ncnn
 
+# Download pre-trained model
+cd $HOME/AndroidNativeAim/scripts
+bash download_model.sh
+echo "Pre-trained model downloaded and converted."
+
 # Install Termux:API
 termux-api-setup  # Run manually if needed
 
